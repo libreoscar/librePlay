@@ -1,6 +1,6 @@
 import Channel from 'async-csp'
 
-async function sleep(duration) {
+function sleep(duration) {
     return new Promise(resolve => setTimeout(resolve, duration))
 }
 
@@ -8,11 +8,11 @@ async function player(name, table) {
     while (true) {
         let ball = await table.take();
         if (ball === Channel.DONE) {
-            console.log(`${name}: table's gone!`);
+            console.log(name, ': table\'s gone!');
             break;
         }
         ball.hits++;
-        console.log(`${name}! Hits: ${ball.hits}`);
+        console.log(name, ': hits =', ball.hits);
         await sleep(100);
         await table.put(ball);
     }

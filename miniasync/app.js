@@ -1,5 +1,7 @@
 require('babel-register'); // so we can keep the interesting code in ES6/7
 
-var app = require('./ping-pong.js');
-console.log("at here")
-app.run();
+// var pingpong = require('./ping-pong.js');
+// pingpong.run();
+
+var interleave = require('./interleave.js');
+interleave.run();
