@@ -4,7 +4,7 @@ function sleep(duration) {
     return new Promise(resolve => setTimeout(resolve, duration))
 }
 
-async function player(name, table) {
+const player = async (name, table) => {
     while (true) {
         let ball = await table.take();
         if (ball === Channel.DONE) {
